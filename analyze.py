@@ -42,6 +42,7 @@ def analyze_audio(filename):
         response = deepgram.listen.prerecorded.v("1").transcribe_file(payload, options)
         return json.loads(response.to_json(indent=4))
     except Exception as e:
+        print(e)
         return e
 
 def parse_json(json_data):
@@ -137,7 +138,9 @@ def short_form(prompt, context="You give feedback on interviews based on how wel
 if __name__ == "__main__":
     # filename = "Behavioral-Mock-Interview.mp3"
     # filename = "Job-Interview-Poor-Example.mp3"
-    filename = os.getcwd() + "/" + sys.stdin.readline().strip()
+
+    filename = os.path.join(os.getcwd(), sys.stdin.readline().strip())
+    print(filename)
     # print(json.dumps({"filename": filename}))
     prompt = analyze_transcript(filename)
     long_form = long_form(prompt)
