@@ -42,6 +42,13 @@ code {
   padding: 5px;
 }
 
+<<<<<<< HEAD
+=======
+#submit-button:hover{
+  background-color: #c0c0c0;
+}
+
+>>>>>>> b69ae5f5715a1696b3d122c46882e2cc49ec42a8
 .file-input {
   display: none;
 }
