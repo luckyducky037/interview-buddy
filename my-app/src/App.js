@@ -21,7 +21,7 @@ function App() {const [file, setFile] = useState(null);
     formData.append('file', file);
   
     try {
-      const res = await fetch('http://localhost:4000/upload', {
+      const res = await fetch('http://localhost:5000/upload', {
         method: 'POST',
         body: formData,
       });

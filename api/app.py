@@ -1,9 +1,12 @@
+# filepath: /c:/Users/laval/OneDrive/Desktop/Interview Helper/interview-helper/api/app.py
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import subprocess
 import os
 import json
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
